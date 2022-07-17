@@ -28,8 +28,7 @@ async function moreOnClick(e) {
   try {
     let currentTarget = e.currentTarget;
     let url =
-      "http://localhost:3030/jsonstore/advanced/articles/details/" +
-      currentTarget.id;
+      "http://localhost:3030/jsonstore/advanced/articles/details/" + currentTarget.id;
     let parent = currentTarget.parentNode.parentNode;
     let extraDiv = parent.querySelector("div.extra");
 
@@ -39,7 +38,7 @@ async function moreOnClick(e) {
       throw new Error("Error obtaining article details");
     }
     let data = await response.json();
-    extraDiv.innerHTML = `<p>${data.content}</p>`;
+    extraDiv.innerHTML = `<p>${data.content}</p>`
     if (currentTarget.textContent == "More") {
       currentTarget.textContent = "Less";
       extraDiv.style.display = "block";
